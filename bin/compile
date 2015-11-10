@@ -146,6 +146,10 @@ cache_build() {
   save_signature
 }
 
+header "Start building your book"
+$BUILD_DIR/node_modules/.bin/gitbook build
+header "Gitbook Build finished."
+
 header "Caching build"
 cache_build | output "$LOG_FILE"
 
